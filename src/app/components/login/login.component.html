@@ -1,0 +1,15 @@
+<select [(ngModel)]="credentials.type"> 
+    <br><br><br>
+    
+    <option disabled>plz choose type</option>
+    <option>Admin</option>
+    <option>Customer</option>
+    <option>Company</option>
+</select>
+<br><br>
+<input placeholder="plz enter user name" [(ngModel)]="credentials.name">
+<br><br>
+<input type="password" placeholder="plz enter ur password" [(ngModel)]="credentials.password">
+<br><br>
+<p>{{credentials.name+","+credentials.password+","+credentials.type}}</p>
+<button (click)="login()">Login</button>
