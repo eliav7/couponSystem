@@ -1,0 +1,27 @@
+<p id=a>Please Update The Customer:</p>
+<!-- <span>id</span> <input [(ngModel)]="newC.id"> <br><br> -->
+<span>first name</span> <input #firstName='ngModel' [(ngModel)]="newC.firstName" required> 
+<span id=b *ngIf="firstName.errors?.required && firstName.touched">Missing firstName</span>
+<br><br>
+<span>last name</span> <input #lastName='ngModel' [(ngModel)]="newC.lastName" required> 
+<span id=b *ngIf="lastName.errors?.required && lastName.touched">Missing lastName</span>
+<br><br>
+<span>email</span><input type="email" #email='ngModel' [(ngModel)]="newC.email" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+<span id=b *ngIf="email.errors?.required && email.touched">Missing email</span>
+<span id=b *ngIf="email.errors?.pattern">email is invalid</span>
+<br><br>  
+<span>password</span><input type="password" #password='ngModel' [(ngModel)]="newC.password" required>
+<span id=b *ngIf="password.errors?.required && password.touched">Missing password</span>
+<br><br>
+<span>coupons</span><input #coupons='ngModel' [(ngModel)]="newC.coupons" required> 
+<span id=b *ngIf="coupons.errors?.required && coupons.touched">Missing coupons</span>
+<br><br>
+
+<button [disabled]="!(firstName.valid&&lastName.valid&&email.valid&&password.valid
+&&coupons.valid)" type="submit" (click)="updateCustomer()">Update Customer</button><br>
+<br>
+<a [routerLink]="['/updateCustomer']" routerLinkActive="router-link-active">
+    <button id=c> 
+        back
+    </button>
+</a>

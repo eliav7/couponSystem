@@ -1,0 +1,32 @@
+<p id=a>Please Insert Company Details:</p>
+
+<span>name</span> <input #name='ngModel' [(ngModel)]="company.name" required>
+<span id=b *ngIf="name.errors?.required && name.touched">Missing name</span>
+<br><br>
+
+<span>email</span><input type="email" #email='ngModel' [(ngModel)]="company.email" required
+    pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+<span id=b *ngIf="email.errors?.required && email.touched">Missing email</span>
+<span id=b *ngIf="email.errors?.pattern">email is invalid</span>
+<br><br>
+
+<span>password</span><input type="password" #password='ngModel' [(ngModel)]="company.password" required>
+<span id=b *ngIf="password.errors?.required && password.touched">Missing password</span>
+<br><br>
+
+<span>coupons</span><input #coupons='ngModel' [(ngModel)]="company.coupons" required>
+<span id=b *ngIf="coupons.errors?.required && coupons.touched">Missing coupons</span>
+<br><br>
+
+<!-- <button [disabled]="!(name.valid&&email.valid&&password.valid 
+&&coupons.valid)" type="submit" (click)="addCompany()">Add Company</button><br>
+<br> -->
+<button  type="submit" (click)="addCompany()">Add Company</button><br>
+<br>
+
+
+<a  [routerLink]="['/admin']" routerLinkActive="router-link-active" >
+    <button id=c>
+        back   
+    </button>      
+</a>    

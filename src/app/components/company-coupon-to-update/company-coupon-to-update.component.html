@@ -1,0 +1,139 @@
+<p id=a>Please Update The coupon:</p>
+<span>category:</span>
+    <!--<input [(ngModel)]="newC.category"><br><br>-->
+    <select #category="ngModel" [(ngModel)]="newC.category" required>
+
+        <!-- <option value="undefined" disabled selected hidden required>Choose a drink</option> -->
+        <option value="undefined" selected hidden>Please Insert Category</option>
+        <option>food</option>
+        <option>electricity</option>
+        <option>resturant</option>
+        <option>vacation</option> 
+    </select> 
+    <!-- <span id=b *ngIf="category.errors?.required && category.touched">Missing category</span> -->
+    <br><br>
+
+    <span>title:</span><input #title='ngModel' required [(ngModel)]="newC.title">
+    <span id=b *ngIf="title.errors?.required && title.touched">Missing title</span>
+    <br><br>
+    
+    <span>description:</span><input #description='ngModel' required [(ngModel)]="newC.description">
+    <span id=b *ngIf="description.errors?.required && description.touched">Missing description</span>
+    <br><br>
+    
+    <span>startDate:</span><input #startDate='ngModel' required [(ngModel)]="newC.startDate" pattern="^(19|20)\d\d[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])$"> 
+    <span id=b *ngIf="startDate.errors?.required && startDate.touched">Missing startDate</span>
+    <span id=b *ngIf="startDate.errors?.pattern">date format must be yyyy-MM-dd</span>
+    <br><br>
+    
+    <!-- <span id=b *ngIf="startDate.errors?.required && startDate.touched">Missing Price</span>
+    <span id=b *ngIf="startDate.errors?.pattern">startDate Must Be Greater Than 0 And Contain Only Numbers</span><br><br> -->
+    
+    <span>endDate:</span><input #endDate='ngModel' required [(ngModel)]="newC.endDate" pattern="^(19|20)\d\d[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])$">
+    <span id=b *ngIf="endDate.errors?.required && endDate.touched">Missing endDate</span>
+    <span id=b *ngIf="endDate.errors?.pattern">date format must be yyyy-MM-dd</span>
+    <br><br>
+    
+    <!-- <span id=b *ngIf="endDate.errors?.required && endDate.touched">Missing Price</span>
+    <span id=b *ngIf="endDate.errors?.pattern">endDate Must Be Greater Than 0 And Contain Only Numbers</span><br><br> -->
+    
+    <span>amount:</span><input type="number" #amount='ngModel' required [(ngModel)]="newC.amount" pattern="^[1-9][0-9]*$">
+    <span id=b *ngIf="amount.errors?.required && amount.touched">Missing amount</span>
+    <span id=b *ngIf="amount.errors?.pattern">amount Must Be Greater Than 0 And Contain Only Numbers</span><br><br>
+    
+    <span>price:</span><input type="number" #price='ngModel' required [(ngModel)]="newC.price" pattern="^[1-9][0-9]*$"> 
+    <span id=b *ngIf="price.errors?.required && price.touched">Missing Price</span>
+    <span id=b *ngIf="price.errors?.pattern">Price Must Be Greater Than 0 And Contain Only Numbers</span><br><br>
+    
+    <span>image:</span><input #image='ngModel' required [(ngModel)]="newC.image">
+    <span id=b *ngIf="image.errors?.required && image.touched">Missing image</span>
+    <br><br>
+
+    <!-- <p>{{category.valid}}</p>
+    <p>{{title.valid}}</p>
+    <p>{{description.valid}}</p>
+    <p>{{startDate.valid}}</p>
+    <p>{{endDate.valid}}</p>
+    <p>{{amount.valid}}</p>
+    <p>{{price.valid}}</p>
+    <p>{{image.valid}}</p> -->
+
+    <!-- <button [disabled]="!selectInfo.valid" (click)=" getCustomernewCsByCategory()">submit</button> -->
+
+    <button id=c [disabled]="!(category.valid && title.valid && description.valid
+    && startDate.valid && endDate.valid && price.valid && amount.valid && image.valid)" (click)="updateCoupon()">Update coupon</button><br>
+
+<br> 
+<a [routerLink]="['/companyUpdateCoupon']" routerLinkActive="router-link-active">  
+    <button> 
+        back    
+    </button>
+</a>
+<!-- <div> -->
+
+<!-- <table> -->
+<!-- <tr>
+            <th>id</th>
+            <th>category</th>
+            <th>title</th>
+            <th>description</th>
+            <th>startDate</th>
+            <th>endDate</th>
+            <th>amount</th>
+            <th>price</th> 
+            <th>image</th>
+        </tr> -->
+
+<!-- <th>id</th>
+        <th>category</th>
+        <th>title</th>
+        <th>description</th>
+        <th>startDate</th>
+        <th>endDate</th>
+        <th>amount</th>
+        <th>price</th>
+        <th>image</th> -->
+
+
+<!-- <input size="5" value="{{c.category}}" > -->
+<!-- <input name="newC.title"  id="newC.title" type="text" size="5"  [(ngModel)]="newC.title">
+        <input size="7" value="{{c.description}}">
+        <input size="6" value="{{c.startDate}}">
+        <input size="6" value="{{c.endDate}}">
+        <input size="4" value="{{c.amount}}">
+        <input size="2" value="{{c.price}}">
+        <input size="2" value="{{c.image}}"> -->
+<!-- <tr>
+            <td>{{c.id}}</td>
+            <td><input  size="5" value="{{c.category}}"></td>
+            <td><input size="5" value="{{c.title}}"></td>
+            <td><input size="7" value="{{c.description}}"></td>
+            <td><input size="6" value="{{c.startDate}}"></td>
+            <td><input size="6" value="{{c.endDate}}"></td>
+            <td><input size="4" value="{{c.amount}}"></td>
+            <td><input size="2" value="{{c.price}}"></td>
+            <td><input size="2" value="{{c.image}}"></td>
+            [(ngModel)]="newC.id"
+        </tr> -->
+<!-- <span>{{newC.id}}</span>
+    </table>
+</div>
+<br>
+<a [routerLink]="['/companyUpdatenewC']" routerLinkActive="router-link-active">
+    <button>
+        back
+    </button>
+</a> -->
+<!-- <p *ngFor="let c of newCs"> {{c.title}} </p>  -->
+<!-- 
+<tr *ngFor="let c of newCs">
+    <td><input value="{{c.id}}"></td>
+    <td><input value="{{c.category}}"></td>
+    <td><input value="{{c.title}}"></td>
+    <td><input value="{{c.description}}"></td>
+    <td><input value="{{c.startDate}}"></td>
+    <td><input value="{{c.endDate}}"></td>
+    <td><input value="{{c.amount}}"></td>
+    <td><input value="{{c.price}}"></td>
+    <td><input value="{{c.image}}"></td>
+</tr> -->

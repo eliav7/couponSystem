@@ -1,0 +1,67 @@
+<br>
+
+<select #selectInfo='ngModel' [(ngModel)]="cName" required >
+
+    <option value="undefined" selected hidden>Please Choose A Company</option>
+    <option *ngFor="let c of companies">{{c.name}}</option>  
+ 
+</select>
+<button id = abc [disabled]="!selectInfo.valid" (click)="showCoupons(cName)">submit</button> 
+<!-- <app-customer-choose-coupon  *ngIf="[cName]!=''" name="{{cName}}"></app-customer-choose-coupon>  -->
+<br>
+<div *ngIf="!flag">
+<p id=abcd>Here Are The Company's Coupons:</p>
+<span id=abcd>Please Select A Coupon To Purchase:(press on it's title)</span> 
+<br><br>  
+    <table>
+        <tr>
+            <!-- company name?! -->
+            <th>title</th>           
+            <th>category</th>
+            <th>description</th>
+            <th>startDate</th>
+            <th>endDate</th>
+            <th>amount</th>
+            <th>price</th>
+            <th>image</th>
+        </tr>
+        <tr *ngFor="let c of coupons">
+            <td><button (click)="purchaseCoupon(c)">{{c.title}}</button></td>
+            <td>{{c.category}}</td>
+            <td>{{c.description}}</td>
+            <td>{{c.startDate | date:'dd-MM-yy'}}</td>
+            <td>{{c.endDate | date:'dd-MM-yy'}}</td>
+            <td>{{c.amount}}</td>
+            <td>{{c.price}}</td>
+            <td>{{c.image}}</td>
+        </tr>
+    </table>  
+</div>
+
+<p *ngIf="flag&&flag2">This Company Doesn't Have Any Coupons</p>
+
+<!-- <p *ngFor="let c of coupons"> {{c.title}} </p>  -->
+
+<br>   
+<a [routerLink]="['/customer']" routerLinkActive="router-link-active" >
+    <button>
+        back   
+    </button>      
+</a>    
+
+
+<!-- <p>Please Choose A Company:</p>
+<div>
+    <table>
+        <tr *ngFor="let c of companies">
+            <a [routerLink]="['/customerChooseCoupon']" routerLinkActive="router-link-active"><td>{{c.name}}</td></a> 
+        </tr>
+    </table>  
+</div>
+<br>
+<a [routerLink]="['/customer']" routerLinkActive="router-link-active" >
+    <button>
+        back
+    </button>
+</a>  -->
+<!-- <p *ngFor="let c of coupons"> {{c.title}} </p>  -->

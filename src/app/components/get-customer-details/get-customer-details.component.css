@@ -1,0 +1,14 @@
+p {
+    color: black;
+}
+
+span{
+    color: blue; 
+}   
+ 
+#abc{ 
+     font-weight:bold ;  
+     text-decoration: underline; 
+     text-decoration-color: black;
+     color:rgb(145, 2, 2);
+}

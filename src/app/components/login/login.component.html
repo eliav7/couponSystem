@@ -1,15 +1,29 @@
-<select [(ngModel)]="credentials.type"> 
-    <br><br><br>
-    
-    <option disabled>plz choose type</option>
-    <option>Admin</option>
-    <option>Customer</option>
-    <option>Company</option>
-</select>
 <br><br>
-<input placeholder="plz enter user name" [(ngModel)]="credentials.name">
+<select #type='ngModel' [(ngModel)]="credentials.type" required >
+
+
+    <!-- <option value="undefined" disabled selected hidden required>Choose a drink</option> -->
+    <option id=a value="undefined" selected hidden>plz choose a type</option>
+    <option id=a>admin</option>  
+    <option id=a> customer</option> 
+    <option id=a>company</option>  
+</select>   
 <br><br>
-<input type="password" placeholder="plz enter ur password" [(ngModel)]="credentials.password">
+<input #email='ngModel' type="email" placeholder="plz enter ur email" [(ngModel)]="credentials.email" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+<span id=b *ngIf="email.errors?.required && email.touched">Missing email</span>
+    <span id=b *ngIf="email.errors?.pattern">email is invalid</span>
+<p>KelyRob@Gmail.Com</p>
+<p>Myin@Gmail.Com</p>
+<p>eliav7@hotmail.com</p>
+  
+<br><br>  
+<input #password='ngModel' type="password" placeholder="plz enter ur password" [(ngModel)]="credentials.password" required>
+<span id=b *ngIf="password.errors?.required && password.touched">Missing password</span>
 <br><br>
-<p>{{credentials.name+","+credentials.password+","+credentials.type}}</p>
-<button (click)="login()">Login</button>
+<p>{{credentials.email+","+credentials.password+","+credentials.type}}</p>
+
+<button id=c [disabled]="!(type.valid&&email.valid&&password.valid)" type="submit" (click)="login()">Login</button>
+<!--<button (click)="pi()">home navi</button>
+<a *ngIf="true" [routerLink] ="['/**']" routerLinkActive="router-link-active"><button (click)="login()">Login</button></a>
+*ngIf="isLoggedIn"-->
+

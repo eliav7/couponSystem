@@ -1,0 +1,27 @@
+<p id=a>Here Are The Companies:</p>
+<div>
+    <table>
+        <tr> 
+            <!-- company name?! -->
+            <th>id</th>
+            <th>name</th>
+            <th>email</th>
+            <th>password</th>
+            <th>coupons</th>
+        </tr>
+        <tr *ngFor="let c of companies">
+            <td>{{c.id}}</td>
+            <td>{{c.name}}</td>
+            <td>{{c.email}}</td>
+            <td>{{c.password}}</td>
+            <td>{{c.coupons}}</td>
+        </tr>
+    </table>  
+</div>
+<br>
+<a [routerLink]="['/admin']" routerLinkActive="router-link-active" >
+    <button id=b>
+        back
+    </button>
+</a> 
+<!-- <p *ngFor="let c of coupons"> {{c.title}} </p>  -->

@@ -1,0 +1,47 @@
+<p id=a>Please Choose A Coupon To Update:(press on it's title)</p>
+<div>
+    <table>
+        <tr>
+            <!-- company name?! -->
+            <th>id</th>
+            <th>title</th>
+            <th>category</th> 
+            <th>description</th>
+            <th>startDate</th>
+            <th>endDate</th>
+            <th>amount</th>
+            <th>price</th>
+            <th>image</th>
+        </tr>
+        <tr *ngFor="let c of coupons">
+            <td>{{c.id}}</td>
+            <td><a routerLink="/companyCouponToUpdate/{{c.id}}" routerLinkActive="routerLinkActive">{{c.title}}</a></td>
+            <td>{{c.category}}</td>
+            <td>{{c.description}}</td>
+            <td>{{c.startDate |date:'dd-MM-yy'}}</td>
+            <td>{{c.endDate |date:'dd-MM-yy'}}</td>
+            <td>{{c.amount}}</td>
+            <td>{{c.price}}</td>
+            <td>{{c.image}}</td>
+        </tr>
+    </table>  
+</div>
+<br>
+<a [routerLink]="['/company']" routerLinkActive="router-link-active" >
+    <button id=y>
+        back
+    </button>
+</a> 
+<!-- <p *ngFor="let c of coupons"> {{c.title}} </p>  -->
+<!-- 
+<tr *ngFor="let c of coupons">
+    <td><input value="{{c.id}}"></td>
+    <td><input value="{{c.category}}"></td>
+    <td><input value="{{c.title}}"></td>
+    <td><input value="{{c.description}}"></td>
+    <td><input value="{{c.startDate}}"></td>
+    <td><input value="{{c.endDate}}"></td>
+    <td><input value="{{c.amount}}"></td>
+    <td><input value="{{c.price}}"></td>
+    <td><input value="{{c.image}}"></td>
+</tr> -->

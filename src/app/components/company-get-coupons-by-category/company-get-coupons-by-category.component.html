@@ -1,0 +1,55 @@
+ <br><br>
+    <!-- <input [(ngModel)]="coupon.category" placeholder="Please Insert Category"> -->
+    <select #selectInfo="ngModel" [(ngModel)]="coupon.category" required >
+    
+    
+        <!-- <option value="undefined" disabled selected hidden required>Choose a drink</option> -->
+        <option value="undefined" selected hidden>Please Insert Category</option>
+        <option>food</option>  
+        <option>electricity</option> 
+        <option>resturant</option>
+        <option>vacation</option> 
+    </select> 
+    
+    <br><br>
+     <button [disabled]="!selectInfo.valid" (click)=" getCompanyCouponsByCategory()">submit</button>
+     <br>
+    <div *ngIf="!flag"> 
+        <p id=a>Here Are Your Coupons From The Submitted Category:</p>
+    
+    <table>
+        <tr> 
+            <!-- company name?! -->
+            <th>id</th>
+            <th>title</th>
+            <th>category</th> 
+            <th>description</th>
+            <th>startDate</th>
+            <th>endDate</th>
+            <th>amount</th>
+            <th>price</th>
+            <th>image</th>
+        </tr>
+        <tr *ngFor="let c of coupons">
+            <td>{{c.id}}</td> 
+            <td>{{c.title}}</td>
+            <td>{{c.category}}</td>
+            <td>{{c.description}}</td>
+            <td>{{c.startDate | date:'dd-MM-yy'}}</td>
+            <td>{{c.endDate | date:'dd-MM-yy'}}</td>
+            <td>{{c.amount}}</td>
+            <td>{{c.price}}</td>
+            <td>{{c.image}}</td>
+        </tr>
+    </table>  
+</div>
+
+<p *ngIf="flag&&flag2">There Are No Coupons Of That Category</p>
+
+<br>
+<a [routerLink]="['/company']" routerLinkActive="router-link-active" >
+    <button>
+        back
+    </button>
+</a> 
+<!-- <p *ngFor="let c of coupons"> {{c.title}} </p>  -->

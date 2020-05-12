@@ -1,0 +1,44 @@
+table {
+    margin: auto;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+tr:nth-child(even){
+    background-color: lightblue;
+}
+
+/* tr:nth-child(even) {
+background-color: solid blue;
+} */
+
+tr:nth-child(odd) {   
+    background-color: lightyellow; 
+} 
+ 
+#abc {  
+margin: 10px;
+}
+
+div {
+    height: 85%;
+    overflow: auto;
+}
+
+#abcd{ 
+    font-weight:bold ;  
+    text-decoration: underline; 
+    text-decoration-color: black;
+    color:rgb(145, 2, 2);
+}
+
+p{
+    font-weight: bold;
+}
+
+div {
+    height:70%;   
+    overflow: auto; 
+}

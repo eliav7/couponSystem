@@ -1,0 +1,19 @@
+<br>
+<input #id='ngModel' type="number" placeholder="Plz Enter The Company's id" [(ngModel)]="company1.id" required pattern="^[1-9][0-9]*$">
+
+<button id=g [disabled]="!id.valid" (click)="getOneCompany()">submit</button>
+<span id=b *ngIf="id.errors?.required && id.touched">Missing id</span>
+<span id=b *ngIf="id.errors?.pattern">id Must Be Greater Than 0 And Contain Only Numbers</span>
+
+<P id=a>The Company's Details are:</P>
+<p>id : <span>{{company1.id}}</span></p>
+<p>Name : <span>{{company1.name}}</span></p>
+<p>Email : <span>{{company1.email}}</span></p>
+<p>Password : <span>{{company1.password}}</span></p>
+<p>coupons : <span>{{company1.coupons}}</span></p>
+
+<a [routerLink]="['/admin']" routerLinkActive="router-link-active">
+    <button id=e>
+        back
+    </button>
+</a>

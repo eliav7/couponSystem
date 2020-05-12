@@ -1,0 +1,33 @@
+<p id=abc>Here Are Your Coupons:</p>
+<div>
+    <table>
+        <tr> 
+            <!-- company name?! -->
+            <th>title</th>
+            <th>category</th> 
+            <th>description</th>
+            <th>startDate</th>
+            <th>endDate</th>
+            <!-- <th>amount</th> -->
+            <th>price</th>
+            <th>image</th>
+        </tr>
+        <tr *ngFor="let c of coupons">
+            <td>{{c.title}}</td>
+            <td>{{c.category}}</td>
+            <td>{{c.description}}</td>
+            <td>{{c.startDate|date:'dd-MM-yy'}}</td>
+            <td>{{c.endDate|date:'dd-MM-yy'}}</td>
+            <!-- <td>{{c.amount}}</td> -->
+            <td>{{c.price}}</td>
+            <td>{{c.image}}</td>
+        </tr>
+    </table>  
+</div>
+<br>
+<a [routerLink]="['/customer']" routerLinkActive="router-link-active" >
+    <button>
+        back
+    </button>
+</a> 
+<!-- <p *ngFor="let c of coupons"> {{c.title}} </p>  -->

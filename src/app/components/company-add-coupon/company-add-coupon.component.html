@@ -1,0 +1,69 @@
+<div>
+    <p id=a>Please Insert Coupon's Details:</p>
+    <!-- <span>Id:</span><input [(ngModel)]="coupon.id">
+<span>companyID:</span><input [(ngModel)]="coupon.companyId"> -->
+    <!-- <form #form="ngForm"> -->
+    <span>category:</span>
+    <!--<input [(ngModel)]="coupon.category"><br><br>-->
+    <select #category="ngModel" [(ngModel)]="coupon.category" required>
+
+        <!-- <option value="undefined" disabled selected hidden required>Choose a drink</option> -->
+        <option value="undefined" selected hidden>Please Insert Category</option>
+        <option>food</option>
+        <option>electricity</option>
+        <option>resturant</option>
+        <option>vacation</option> 
+    </select> 
+    <!-- <span id=b *ngIf="category.errors?.required && category.touched">Missing category</span> -->
+    <br><br>
+
+    <span>title:</span><input #title='ngModel' required [(ngModel)]="coupon.title">
+    <span id=b *ngIf="title.errors?.required && title.touched">Missing title</span>
+    <br><br>
+    <span>description:</span><input #description='ngModel' required [(ngModel)]="coupon.description">
+    <span id=b *ngIf="description.errors?.required && description.touched">Missing description</span>
+    <br><br>
+    <span>startDate:</span><input #startDate='ngModel' required [(ngModel)]="coupon.startDate" pattern="^(19|20)\d\d[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])$">
+    <span id=b *ngIf="startDate.errors?.required && startDate.touched">Missing startDate</span>
+    <span id=b *ngIf="startDate.errors?.pattern">date format must be yyyy-MM-dd</span>
+    <br><br>
+    <!-- <span id=b *ngIf="startDate.errors?.required && startDate.touched">Missing Price</span>
+    <span id=b *ngIf="startDate.errors?.pattern">startDate Must Be Greater Than 0 And Contain Only Numbers</span><br><br> -->
+    <span>endDate:</span><input #endDate='ngModel' required [(ngModel)]="coupon.endDate" pattern="^(19|20)\d\d[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])$">
+    <span id=b *ngIf="endDate.errors?.required && endDate.touched">Missing endDate</span>
+    <span id=b *ngIf="endDate.errors?.pattern">date format must be yyyy-MM-dd</span>
+    <br><br>
+    <!-- <span id=b *ngIf="endDate.errors?.required && endDate.touched">Missing Price</span>
+    <span id=b *ngIf="endDate.errors?.pattern">endDate Must Be Greater Than 0 And Contain Only Numbers</span><br><br> -->
+    <span>amount:</span><input type="number" #amount='ngModel' required [(ngModel)]="coupon.amount" pattern="^[1-9][0-9]*$">
+    <span id=b *ngIf="amount.errors?.required && amount.touched">Missing amount</span>
+    <span id=b *ngIf="amount.errors?.pattern">amount Must Be Greater Than 0 And Contain Only Numbers</span><br><br>
+    <span>price:</span><input type="number" #price='ngModel' required [(ngModel)]="coupon.price" pattern="^[1-9][0-9]*$"> 
+    <span id=b *ngIf="price.errors?.required && price.touched">Missing Price</span>
+    <span id=b *ngIf="price.errors?.pattern">Price Must Be Greater Than 0 And Contain Only Numbers</span><br><br>
+    <span>image:</span><input #image='ngModel' required [(ngModel)]="coupon.image">
+    <span id=b *ngIf="image.errors?.required && image.touched">Missing image</span>
+    <br><br>
+
+    <!-- <p>{{category.valid}}</p>
+    <p>{{title.valid}}</p>
+    <p>{{description.valid}}</p>
+    <p>{{startDate.valid}}</p>
+    <p>{{endDate.valid}}</p>
+    <p>{{amount.valid}}</p>
+    <p>{{price.valid}}</p>
+    <p>{{image.valid}}</p> -->
+
+    <!-- <button [disabled]="!selectInfo.valid" (click)=" getCustomerCouponsByCategory()">submit</button> -->
+
+    <button id=c [disabled]="!(category.valid && title.valid && description.valid
+    && startDate.valid && endDate.valid && price.valid && amount.valid && image.valid)" (click)="addCoupon()">Add Coupon</button>
+
+    <br><br>
+    <a [routerLink]="['/company']" routerLinkActive="router-link-active">
+        <button>
+            back
+        </button>
+    </a>
+    <!-- </form> -->
+</div>

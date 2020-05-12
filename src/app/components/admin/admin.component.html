@@ -1,1 +1,47 @@
-<p>admin works!</p>
+<br>
+<a [routerLink]="['/addCompany']" routerLinkActive='routerLinkActive'><button>addCompany</button></a>
+<br><br>
+<a [routerLink]="['/updateCompany']" routerLinkActive='routerLinkActive'><button>updateCompany</button></a>
+<br><br>
+<a [routerLink]="['/deleteCompany']" routerLinkActive='routerLinkActive'><button>deleteCompany</button></a>
+<br><br>
+<a [routerLink]="['/getAllCompanies']" routerLinkActive='routerLinkActive'><button>getAllCompanies</button></a>
+<br><br>
+<a [routerLink]="['/getOneCompany']" routerLinkActive='routerLinkActive'><button>getOneCompany</button></a>
+<br><br>
+<a [routerLink]="['/addCustomer']" routerLinkActive='routerLinkActive'><button>addCustomer</button></a>
+<br><br>
+<a [routerLink]="['/updateCustomer']" routerLinkActive='routerLinkActive'><button>updateCustomer</button></a>
+<br><br>
+<a [routerLink]="['/deleteCustomer']" routerLinkActive='routerLinkActive'><button>deleteCustomer</button></a>
+<br><br>
+<a [routerLink]="['/getAllCustomers']" routerLinkActive='routerLinkActive'><button>getAllCustomers</button></a>
+<br><br> 
+<a [routerLink]="['/getOneCustomer']" routerLinkActive='routerLinkActive'><button>getOneCustomer</button></a>
+<br><br> 
+<button type="submit" (click)="logout()">logout</button>
+<form>
+<button type="button" mdbBtn color="info" mdbWavesEffect>Info</button>       
+ <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" mdbBtn color="primary" mdbWavesEffect>rew</button>
+<!-- Default button -->
+<button type="button" mdbBtn color="primary" mdbWavesEffect>rew</button> 
+<button type="button" class="btn btn-default">Default</button>
+
+<!-- Secondary button -->
+<button type="button" class="btn btn-secondary">Secondary</button>  
+
+<!-- Indicates a successful or positive action -->
+<button type="button" class="btn btn-success">Success</button>
+
+<!-- Contextual button for informational alert messages -->
+<button type="button" class="btn btn-info">Info</button>
+
+<!-- Indicates caution should be taken with this action -->
+<button type="button" class="btn btn-warning">Warning</button>
+
+<!-- Indicates a dangerous or potentially negative action -->          
+<button type="button" class="btn btn-danger">Danger</button>
+</form> 

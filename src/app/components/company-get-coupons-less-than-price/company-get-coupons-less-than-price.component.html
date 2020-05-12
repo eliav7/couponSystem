@@ -1,0 +1,45 @@
+<br><br>
+<input type=number #priceInfo='ngModel' [(ngModel)]="price" placeholder="Please Insert Price" required pattern="^[1-9][0-9]*$">
+<span *ngIf="priceInfo.errors?.required && priceInfo.touched">Missing Price</span>
+<span *ngIf="priceInfo.errors?.pattern">Price Must Be Greater Than 0 And Contain Only Numbers</span>
+<br><br>
+ <button [disabled]="!priceInfo.valid" (click)="getCompanyCouponsByMaxPrice()">submit</button>
+
+ <br><br> 
+
+<div *ngIf="!flag">
+    <p id=a>Here Are Your Coupons Which Their Price Is Less Than The Submitted Price:</p>
+    <table>
+        <tr> 
+            <!-- company name?! -->
+            <th>id</th>
+            <th>title</th>
+            <th>category</th> 
+            <th>description</th>
+            <th>startDate</th>
+            <th>endDate</th>
+            <th>amount</th>
+            <th>price</th>
+            <th>image</th>
+        </tr>
+        <tr *ngFor="let c of coupons">
+            <td>{{c.id}}</td>
+            <td>{{c.title}}</td>
+            <td>{{c.category}}</td>
+            <td>{{c.description}}</td>
+            <td>{{c.startDate | date:'dd-MM-yy'}}</td>
+            <td>{{c.endDate| date:'dd-MM-yy'}}</td>
+            <td>{{c.amount}}</td>
+            <td>{{c.price}}</td>
+            <td>{{c.image}}</td>
+        </tr>
+    </table>  
+</div>
+<p *ngIf="flag&&flag2">There Are No Coupons To Display</p>
+<br> 
+<a [routerLink]="['/company']" routerLinkActive="router-link-active" >
+    <button>
+        back
+    </button>
+</a> 
+<!-- <p *ngFor="let c of coupons"> {{c.title}} </p>  -->

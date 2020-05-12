@@ -1,0 +1,29 @@
+<p>Here Are The Company's Coupons:</p>
+<p>{{name}}</p>
+<div>
+    <table>
+        <tr>
+            <!-- company name?! -->
+            <th>category</th>
+            <th>title</th>
+            <th>description</th>
+            <th>startDate</th>
+            <th>endDate</th>
+            <th>amount</th>
+            <th>price</th>
+            <th>image</th>
+        </tr>
+        <tr *ngFor="let c of coupons">
+            <td>{{c.category}}</td>
+            <td>{{c.title}}</td>
+            <td>{{c.description}}</td>
+            <td>{{c.startDate}}</td>
+            <td>{{c.endDate}}</td>
+            <td>{{c.amount}}</td>
+            <td>{{c.price}}</td>
+            <td>{{c.image}}</td>
+        </tr>
+    </table>  
+</div>
+
+<!-- <p *ngFor="let c of coupons"> {{c.title}} </p>  -->

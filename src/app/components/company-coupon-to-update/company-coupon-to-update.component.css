@@ -1,0 +1,59 @@
+table {
+    margin: auto;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+tr:nth-child(even){
+    background-color: lightblue;
+}
+
+/* tr:nth-child(even) {
+background-color: solid blue;
+} */
+
+tr:nth-child(odd) { 
+    background-color: lightyellow;  
+} 
+
+#a{ 
+    font-weight:bold ;  
+    text-decoration: underline; 
+    text-decoration-color: black;
+    color:rgb(145, 2, 2);
+}
+
+input{
+    color: blue;
+}
+ 
+#c{
+    color: green;
+}
+
+button{
+    color: red;
+}
+
+#b {
+    color: red;
+    margin-left: 10px; 
+    position: absolute;
+    font-size: large;
+}
+ 
+#abc{ 
+    font-weight:bold ;  
+    text-decoration: underline; 
+    text-decoration-color: black;
+    color:rgb(145, 2, 2);
+} 
+
+/* span {
+    left: 30px;
+}
+input {
+    right: 30px;
+} */

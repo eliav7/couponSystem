@@ -1,0 +1,39 @@
+div {
+    height:85%;
+    overflow: auto;
+}
+
+#a{ 
+    font-weight:bold ;  
+    text-decoration: underline; 
+    text-decoration-color: black;
+    color:rgb(145, 2, 2);
+}
+
+input{
+    color: blue;
+}
+ 
+#c{
+    color: green;
+}
+
+button{
+    color: red;
+}
+
+#b {
+    color: red;
+    margin-left: 10px; 
+    position: absolute;
+    font-size: large;
+}
+
+#abc{ 
+    font-weight:bold ;  
+    text-decoration: underline; 
+    text-decoration-color: black;
+    color:rgb(145, 2, 2);
+} 
+  
+
